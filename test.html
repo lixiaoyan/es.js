@@ -7,5 +7,13 @@
   <body>
     <script src="./polyfill.js"></script>
     <script src="./es.js"></script>
+    <script>
+      function Cls(name) {
+        this.name = name;
+      }
+      var obj = $.operator["new"](Cls, ["IntPtr"]);
+      console.assert(obj.name === "IntPtr");
+      console.assert(Object.getPrototypeOf(obj) === Cls.prototype);
+    </script>
   </body>
 </html>
